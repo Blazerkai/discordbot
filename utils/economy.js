@@ -32,6 +32,11 @@ const SHOP_ITEMS = {
 };
 
 function readDB() {
+  if (!fs.existsSync(DB_PATH)) {
+    fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
+    fs.writeFileSync(DB_PATH, '{}');
+    return {};
+  }
   return JSON.parse(fs.readFileSync(DB_PATH, 'utf8'));
 }
 
