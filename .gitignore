@@ -1,3 +1,4 @@
 node_modules/
 .env
-data/*.json
+# data/users.json is intentionally tracked as an empty {} placeholder
+# so Railway and fresh clones have the file on startup
